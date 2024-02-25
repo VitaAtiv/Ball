@@ -7,9 +7,9 @@ html * {
 body {
   margin: 0;
   padding: 50px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
 }
 h1,
 h2,
@@ -51,6 +51,8 @@ img {
 
 .ball-img {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 60px;
 }
