@@ -1,19 +1,38 @@
 const refs = {
   box: document.querySelector(".box"),
-  ballImg: document.querySelector(".ball-img"),
+  ball: document.querySelector(".ball"),
 };
 
-  
-  refs.box.addEventListener("click", function (event) {
-    
-    // const x = event.clientX - refs.box.getBoundingClientRect().left;
-    // const y = event.clientY - refs.box.getBoundingClientRect().top;
-      const x = event.clientX;
-      const y = event.clientY;
+refs.box.addEventListener("click", onClickEvent);
 
-     refs.ballImg.style.transform = `translate(${x - 30}px, ${y - 30}px)`;
-  });
+function onClickEvent(event) {
+  const boxFields = event.currentTarget.getBoundingClientRect();
 
+  let x = event.clientX - boxFields.left - 10 - refs.box.clientWidth / 2;
+  let y = event.clientY - boxFields.top - 10 - refs.box.clientHeight / 2;
+
+  const maxLeftCors = boxFields.right - boxFields.left - 20 - refs.box.clientWidth;
+  const maxBottomCors = boxFields.bottom - boxFields.top - 20 - refs.box.clientHeight;
+
+  console.log(boxFields);
+  console.log("event.clientX", event.clientX);
+  console.log("event.clientY", event.clientY);
+  console.log("y", y);
+  console.log("x", x);
+
+  if (x < 0) {
+    x = 0;
+  } else if (x > maxLeftCors) {
+    x = maxLeftCors;
+  }
+  if (y < 0) {
+    y = 0;
+  } else if (y > maxBottomCors) {
+    y = maxBottomCors;
+  }
+
+  refs.ball.style.transform = `translate(${x}px, ${y}px)`;
+}
 
 //   document.addEventListener("DOMContentLoaded", function () {
 //     // Отримати елементи DOM
@@ -31,5 +50,3 @@ const refs = {
 //       ballImg.style.left = x - ballImg.offsetWidth / 2 + "px";
 //     });
 //   });
-
-

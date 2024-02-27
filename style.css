@@ -49,10 +49,14 @@ img {
   align-items: center;
 }
 
-.ball-img {
+.ball {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
+    background-image: url("https://en.js.cx/clipart/ball.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
