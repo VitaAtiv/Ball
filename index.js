@@ -8,11 +8,11 @@ refs.box.addEventListener("click", onClickEvent);
 function onClickEvent(event) {
   const boxFields = event.currentTarget.getBoundingClientRect();
 
-  let x = event.clientX - boxFields.left - 10 - refs.box.clientWidth / 2;
-  let y = event.clientY - boxFields.top - 10 - refs.box.clientHeight / 2;
+  let x = event.clientX - boxFields.left - 10 - refs.ball.clientWidth / 2;
+  let y = event.clientY - boxFields.top - 10 - refs.ball.clientHeight / 2;
 
-  const maxLeftCors = boxFields.right - boxFields.left - 20 - refs.box.clientWidth;
-  const maxBottomCors = boxFields.bottom - boxFields.top - 20 - refs.box.clientHeight;
+  const maxLeftCors = boxFields.right - boxFields.left - 20 - refs.ball.clientWidth;
+  const maxBottomCors = boxFields.bottom - boxFields.top - 20 - refs.ball.clientHeight;
 
   console.log(boxFields);
   console.log("event.clientX", event.clientX);
@@ -34,19 +34,4 @@ function onClickEvent(event) {
   refs.ball.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-//   document.addEventListener("DOMContentLoaded", function () {
-//     // Отримати елементи DOM
-//     const box = document.querySelector(".box");
-//     const ballImg = document.querySelector(".ball-img");
 
-//     // Додати подію click на елемент .box
-//     box.addEventListener("click", function (event) {
-//       // Отримати координати кліку відносно .box
-//       const x = event.clientX - box.getBoundingClientRect().left;
-//       const y = event.clientY - box.getBoundingClientRect().top;
-
-//       // Перемістити м'яч на нові координати
-//       ballImg.style.top = y - ballImg.offsetHeight / 2 + "px";
-//       ballImg.style.left = x - ballImg.offsetWidth / 2 + "px";
-//     });
-//   });
